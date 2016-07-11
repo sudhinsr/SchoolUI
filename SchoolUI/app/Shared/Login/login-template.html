@@ -1,0 +1,27 @@
+﻿<div class="container row">
+    <div class="col-md-6"></div>
+    <div class="col-md-4">
+        <div class="jumbotron">
+            <form ng-submit="loginValidate()">
+                <div class="row">
+                    UserName:
+                    <div class="pull-right">
+                        <input ng-model="loginModel.UserName" required value="User Name" type="text" />
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    Password:
+                    <div class="pull-right">
+                        <input type="password" ng-model="loginModel.Password" required value="Password" />
+                    </div>
+                </div>
+                <br />
+                <div align="center">
+                    <input type="submit" class="btn btn-success" />
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class=""></div>
+</div>

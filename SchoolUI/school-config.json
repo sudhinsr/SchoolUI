@@ -1,0 +1,5 @@
+﻿{
+  "SCHOOL_CONFIG": {
+    "baseApi": "http://localhost:8048/"
+  }
+}

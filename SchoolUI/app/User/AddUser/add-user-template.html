@@ -1,0 +1,114 @@
+﻿<div class="form-group">
+    <div class="col-md-3"></div>
+    <div class="col-md-9">
+        <h2>Signup Form</h2><br />
+        <form ng-submit="AddUser()">
+
+            <div class="form-group">
+                <label class="control-label col-lg-2" for="UserName">User Name:</label>
+                <div>
+                    <input ng-model="userModel.UserName" required />
+                </div>
+            </div>
+
+            
+
+            <div class="form-group">
+                <label class="control-label col-lg-2" for="UserEmail">User Email:</label>
+                <div>
+                    <input type="email" ng-model="userModel.UserEmail" required />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-lg-2" for="Password">Password:</label>
+                <div>
+                    <input type="password" ng-model="userModel.Password" required />
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label class="control-label col-lg-2" for="IsFaculty">IsFaculty:</label>
+                <div>
+                    <input type="checkbox" id="abc" ng-model="userModel.IsFaculty" value="True" />
+                </div>
+            </div>
+
+
+            <div class="form-group" id="efg" ng-show="userModel.IsFaculty">
+                <label class="control-label col-lg-2" for="FacultyTypeID">FacultyType:</label>
+                <div>
+                    <select>
+                        <option ng-model="userModel.FacultyTypeID" ng-repeat="x in StateAndFaculty.FacultyTypeList" value="{{x.FacultyTypeID}}">{{x.TypeName}}</option>
+                    </select>
+                </div>
+            </div>
+
+
+
+
+            <div class="form-group">
+                <label class="control-label col-lg-2" for="AddressLine1">AddressLine1:</label>
+                <div>
+                    <input ng-model="userModel.AddressLine1" required />
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label class="control-label col-lg-2" for="AddressLine2">AddressLine2:</label>
+                <div>
+                    <input ng-model="userModel.AddressLine2" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-lg-2" for="City">City:</label>
+                <div>
+                    <input ng-model="userModel.City" required>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label class="control-label col-lg-2" style="align-items:stretch;" for="DOB">DOB:</label>
+                <div>
+                    <input type="date"
+                           id="test"
+                           name="birthdate"
+                           ng-model="userModel.DOB"
+                           popup="d MMM yyyy"
+                           options="dateOptions"
+                           opened="opened"
+                           custom-datepicker required />
+                </div>
+            </div>
+
+
+
+
+
+            <div class="form-group">
+                <label class="control-label col-lg-2" for="State">State:</label>
+                <div>
+                    <select>
+                        <option ng-model="userModel.State" ng-repeat="x in StateAndFaculty.StateList" value="{{x.StateCode}}">{{x.StateName}}</option>
+                    </select>
+                </div>
+            </div>
+
+
+
+
+            <div class="form-group">
+                <!-- Buttons -->
+                <div class="col-lg-offset-2 col-lg-8">
+                    <button type="submit" class="btn btn-success" >Add</button>
+    
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-4"></div>
+</div>

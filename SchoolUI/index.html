@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="SchoolUI">
+
+<head>
+    <meta charset="utf-8" />
+    <title>School APP - {{ $state.current.title }}</title>
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="Scripts/angular-cookies.min.js"></script>
+    <script src="Scripts/jQuery/jquery.js"></script>
+
+    <script src="Scripts/jQuery/jui.js"></script>
+    <link href="Styles/bootstrap.min.css" rel="stylesheet" />
+    <link href="Styles/jquery-ui.css" rel="stylesheet" />
+    <!--<script src="Scripts/lib.min.js"></script>-->
+    <script src="Scripts/site.min.js"></script>
+    <script src="Scripts/angular-cookies.min.js"></script>
+
+    
+</head>
+
+<body>
+    <div ui-view></div>
+
+    <script>
+        var angularHelper = angularHelper || {};
+        angularHelper.$watchersCount = function () {
+            var root = angular.element(document.getElementsByTagName('body'));
+
+            var watchers = [];
+
+            var f = function (element) {
+                angular.forEach(['$scope', '$isolateScope'], function (scopeProperty) {
+                    if (element.data() && element.data().hasOwnProperty(scopeProperty)) {
+                        angular.forEach(element.data()[scopeProperty].$$watchers, function (watcher) {
+                            watchers.push(watcher);
+                        });
+                    }
+                });
+
+                angular.forEach(element.children(), function (childElement) {
+                    f(angular.element(childElement));
+                });
+            };
+
+            f(root);
+
+            // Remove duplicate watchers
+            var watchersWithoutDuplicates = [];
+            angular.forEach(watchers, function (item) {
+                if (watchersWithoutDuplicates.indexOf(item) < 0) {
+                    watchersWithoutDuplicates.push(item);
+                }
+            });
+        }
+    </script>
+
+</body>
+
+</html>

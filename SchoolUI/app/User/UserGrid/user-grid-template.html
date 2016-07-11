@@ -1,0 +1,71 @@
+﻿
+<div class="container">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <div>
+            <table class="table table-bordered table-hover">
+                <thead>
+                <td>
+                    userid
+                </td>
+                <td>
+                    username
+                </td>
+                <td>
+                    email
+                </td>
+              
+                </thead>
+                <tbody>
+                    <tr ng-repeat="user in userModel.Users">
+                        <td>
+                            {{user.UserID}}
+                        </td>
+                        <td>
+                            {{user.UserName}}
+                        </td>
+                        <td>
+                            {{user.Email}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="col-md-3"></div>
+</div>
+<!--<div id="sidebar" class="nav-collapse ">
+    <ul class="sidebar-menu">
+        <li class="active">
+            <a class="" href="/login">
+                <i class="icon_house_alt"></i>
+                <span>Login</span>
+            </a>
+        </li>
+        <li class="active">
+            <a class="" href="/signup">
+                <i class="icon_house_alt"></i>
+                <span>Signup</span>
+            </a>
+        </li>
+        <li class="active">
+            <a class="" href="/user">
+                <i class="icon_house_alt"></i>
+                <span>User List</span>
+            </a>
+        </li>
+        <li class="active">
+            <a class="" href="/user/adduser">
+                <i class="icon_house_alt"></i>
+                <span>Add User</span>
+            </a>
+        </li>
+        <li class="active">
+            <a class="" href="/login">
+                <i class="icon_house_alt"></i>
+                <span>Logout</span>
+            </a>
+        </li>
+    </ul>
+</div>
+    <div ui-view></div>-->
